@@ -1,0 +1,106 @@
+In index.html find the Features page
+(#page-features). It has 5 feature rows
+numbered 01 through 05. Each row has a
+text side and a visual demo panel side.
+
+Replace the visual demo panel in each
+feature row with the corresponding image
+from the folder at:
+~/Desktop/thrive stuff/
+
+The images are named:
+thriveimage1.png — row 01 / Profile
+thriveimage2.png — row 02 / Connect
+thriveimage3.png — row 03 / Track
+thriveimage4.png — row 04 / Insight
+thriveimage5.png — row 05 / Manage
+
+For each of the 5 feature rows, find the
+visual demo panel div (the side that
+currently contains mock UI like athlete
+cards, inbox messages, pipeline rows etc).
+
+Replace the entire contents of that panel
+with this image structure:
+
+Row 01 — replace panel contents with:
+<div style="
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+">
+  <img
+    src="/Users/[yourusername]/Desktop/thrive stuff/thriveimage1.png"
+    alt="Team Thrive Profile"
+    style="
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      border-radius: 16px;
+      display: block;
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.5),
+        0 0 0 1px rgba(0,229,160,0.1),
+        0 8px 24px rgba(0,229,160,0.08);
+    "
+  />
+</div>
+
+Repeat this exact structure for rows
+02 through 05, only changing the
+image number in the filename.
+
+To get the correct username for the
+path, run this command in the terminal:
+echo $HOME
+Use the result as the base path so the
+full path becomes:
+$HOME/Desktop/thrive stuff/thriveimage1.png
+
+Use that resolved absolute path for
+all 5 image src attributes.
+
+After replacing all 5 panels:
+
+1. Make sure each feature row uses the
+   same layout — text on one side, image
+   on the other, alternating left/right.
+   Odd rows (01, 03, 05): text left, image right.
+   Even rows (02, 04): text right, image left.
+
+2. Set consistent padding on every
+   feature row section:
+   padding-top: 80px;
+   padding-bottom: 80px;
+
+3. Set consistent gap between text
+   and image columns on every row:
+   gap: 60px;
+
+4. Make the text column and image column
+   equal width:
+   grid-template-columns: 1fr 1fr;
+   or
+   flex: 1; on both sides.
+
+5. The image container div should have:
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+6. Every image gets this same shadow —
+   do not remove it, it makes the cards
+   float off the background:
+   box-shadow:
+     0 20px 60px rgba(0,0,0,0.5),
+     0 0 0 1px rgba(0,229,160,0.1),
+     0 8px 24px rgba(0,229,160,0.08);
+
+Do not change any text content, feature
+headings, pill tags, or section structure.
+Only replace the visual panels and
+standardize the spacing.
